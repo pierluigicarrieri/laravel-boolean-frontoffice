@@ -17,8 +17,8 @@
     },
 
     methods: {
-      fetchData(url) {
-        axios.get(url ?? "http://127.0.0.1:8000/api/cocktails", {
+      fetchData() {
+        axios.get("http://127.0.0.1:8000/api/cocktails", {
           params: this.searchData,})
         .then((response) => {
           this.cocktails = response.data;
