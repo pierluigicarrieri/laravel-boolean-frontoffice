@@ -12,6 +12,7 @@
         cocktails: [],
         searchData: {
         "name" : "",
+        "alcoholic" : "",
         }
       }
     },
@@ -34,6 +35,7 @@
 
       resetSearch() {
         this.searchData.name = "";
+        this.searchData.alcoholic = "";
         this.fetchData();
       },
 
@@ -53,8 +55,13 @@
 
     <div class="container mt-4">
 
-      <form class="w-50 mb-5" @submit.prevent="searchCocktail" @reset="resetSearch">
+      <form class="w-25 mb-5" @submit.prevent="searchCocktail" @reset="resetSearch">
         <input type="text" placeholder="Scrivi cocktail da cercare" class="form-control" v-model="searchData.name">
+        <select class="form-select" v-model="searchData.alcoholic" aria-label="Alcoholic Content">
+          <option value="" selected>Tutti</option>
+          <option value="1">Alcolici</option>
+          <option value="0">Analcolici</option>
+        </select>
         <div class="mt-3 d-flex gap-2">
           <button class="btn btn-primary" type="submit">Cerca</button>
           <button class="btn btn-danger" type="reset">Svuota</button>
