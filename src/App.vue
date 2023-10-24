@@ -45,5 +45,8 @@
 
   body{
     background-color: #0d0d0d;
+    background-image: url("/public/imageBar2.png");
+    background-position: center;
+    background-size: cover;
   }
 </style>

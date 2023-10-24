@@ -141,9 +141,10 @@
   padding-right: 16px;
 }
 
-body{
-  background-image: url("/imageBar2.png");
-  object-fit: cover;
-}
+/* .container {
+  background-image: url("/public/imageBar2.png");
+  background-size: cover;
+  object-fit: contain;
+} */
 
 </style>
