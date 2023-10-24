@@ -51,31 +51,42 @@
 </script>
 
 <template>
-    <h1 class="text-center pt-3">Lista dei progetti</h1>
+    
 
     <div class="container mt-4">
 
-      <form class="w-25 mb-5" @submit.prevent="searchCocktail" @reset="resetSearch">
-        <!-- cocktail search bar -->
-        <div class="searchContainer">
-          <img src="/search-icon.png" alt="">
-          <input type="text" placeholder="Search" class="searchCustom" v-model="searchData.name">
+      <div class="titleSection d-flex align-items-center justify-content-between">
+        <h1 class="title">I nostri cocktails</h1>
+
+        <div class="formContainer">
+          <form class="h-100 d-flex gap-2" @submit.prevent="searchCocktail" @reset="resetSearch">
+          <!-- cocktail search bar -->
+          <div class="searchContainer">
+            <img src="/search-icon.png" alt="">
+            <input type="text" placeholder="Search" class="searchCustom" v-model="searchData.name">
+          </div>
+          
+          <select class="form-select" v-model="searchData.alcoholic" aria-label="Alcoholic Content">
+              <option value="" selected>Tutti</option>
+              <option value="1">Alcolici</option>
+              <option value="0">Analcolici</option>       
+          </select>
+
+          <!-- select for alchohol or not -->
+          <div class="selectContainer">
+            
+          </div>
+
+          <!-- <div class="mt-3 d-flex gap-2">
+            <button class="btn btn-primary" type="submit">Cerca</button>
+            <button class="btn btn-danger" type="reset">Svuota</button>
+          </div> -->
+          </form>
         </div>
         
+      </div>
 
-        <!-- select for alchohol or not -->
-        <select class="form-select" v-model="searchData.alcoholic" aria-label="Alcoholic Content">
-          <option value="" selected>Tutti</option>
-          <option value="1">Alcolici</option>
-          <option value="0">Analcolici</option>
-        </select>
-
-        <!--  -->
-        <div class="mt-3 d-flex gap-2">
-          <button class="btn btn-primary" type="submit">Cerca</button>
-          <button class="btn btn-danger" type="reset">Svuota</button>
-        </div>
-      </form>
+      
 
         <div class="row">
         <div class="col-4" v-for="cocktail in this.cocktails" :key="cocktail.id">
@@ -86,6 +97,7 @@
 </template>
 
 <style scoped>
+  /* searchbar changes */
   .searchCustom{
     background-color: transparent;
     border: 0;
@@ -102,5 +114,25 @@
   input:focus-visible {
     outline: none;
     color: white;
+  }
+
+  /* select alchohol changes */
+  .form-select{
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50px;
+    color: #757575;
+  }
+
+  .formContainer{
+    height: 40px;
+  }
+
+  .title{
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: white;
+    font-size: 40px;
+    letter-spacing: -0.8px;
   }
 </style>
