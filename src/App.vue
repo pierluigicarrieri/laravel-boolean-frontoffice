@@ -48,5 +48,6 @@
     background-image: url("/public/imageBar2.png");
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
   }
 </style>
