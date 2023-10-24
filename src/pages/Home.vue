@@ -56,12 +56,21 @@
     <div class="container mt-4">
 
       <form class="w-25 mb-5" @submit.prevent="searchCocktail" @reset="resetSearch">
-        <input type="text" placeholder="Scrivi cocktail da cercare" class="form-control" v-model="searchData.name">
+        <!-- cocktail search bar -->
+        <div class="searchContainer">
+          <img src="/search-icon.png" alt="">
+          <input type="text" placeholder="Search" class="searchCustom" v-model="searchData.name">
+        </div>
+        
+
+        <!-- select for alchohol or not -->
         <select class="form-select" v-model="searchData.alcoholic" aria-label="Alcoholic Content">
           <option value="" selected>Tutti</option>
           <option value="1">Alcolici</option>
           <option value="0">Analcolici</option>
         </select>
+
+        <!--  -->
         <div class="mt-3 d-flex gap-2">
           <button class="btn btn-primary" type="submit">Cerca</button>
           <button class="btn btn-danger" type="reset">Svuota</button>
@@ -76,6 +85,22 @@
     </div>   
 </template>
 
-<style>
+<style scoped>
+  .searchCustom{
+    background-color: transparent;
+    border: 0;
+  }
 
+  .searchContainer{
+    display: flex;
+    border: 1px solid white;
+    border-radius: 50px;
+    gap: 7px;
+    padding: 8px 12px;
+  }
+
+  input:focus-visible {
+    outline: none;
+    color: white;
+  }
 </style>
