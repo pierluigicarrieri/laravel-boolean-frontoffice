@@ -67,7 +67,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
 .col-4{
   padding: 0;
   margin: 0;
