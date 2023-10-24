@@ -59,23 +59,18 @@
         <h1 class="title">I nostri cocktails</h1>
 
         <div class="formContainer">
-          <form class="h-100 d-flex gap-2" @submit.prevent="searchCocktail" @reset="resetSearch">
+          <form class="h-100 d-flex" @submit.prevent="searchCocktail" @reset="resetSearch">
           <!-- cocktail search bar -->
           <div class="searchContainer">
             <img src="/search-icon.png" alt="">
             <input type="text" placeholder="Search" class="searchCustom" v-model="searchData.name">
           </div>
           
-          <select class="form-select" v-model="searchData.alcoholic" aria-label="Alcoholic Content">
+          <select class="form-select ms-2" v-model="searchData.alcoholic" aria-label="Alcoholic Content">
               <option value="" selected>Tutti</option>
               <option value="1">Alcolici</option>
               <option value="0">Analcolici</option>       
           </select>
-
-          <!-- select for alchohol or not -->
-          <div class="selectContainer">
-            
-          </div>
 
           <!-- <div class="mt-3 d-flex gap-2">
             <button class="btn btn-primary" type="submit">Cerca</button>
@@ -109,6 +104,11 @@
     border-radius: 50px;
     gap: 7px;
     padding: 8px 12px;
+    width: 70%;
+  }
+
+  input {
+    color: white;
   }
 
   input:focus-visible {
@@ -122,10 +122,12 @@
     border: 1px solid white;
     border-radius: 50px;
     color: #757575;
+    width: 30%;
   }
 
   .formContainer{
     height: 40px;
+    width: 45%;
   }
 
   .title{
@@ -134,5 +136,9 @@
     color: white;
     font-size: 40px;
     letter-spacing: -0.8px;
+  }
+
+  .titleSection{
+    margin-bottom: 35px;
   }
 </style>

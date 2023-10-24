@@ -11,7 +11,7 @@
         <div class="py-3 d-flex align-items-center justify-content-between">
           <RouterLink  :to="{name: 'home'}" class="text-decoration-none logo">Cocktail Bar</RouterLink>
 
-          <ul class="d-flex list-unstyled gap-4">
+          <ul class="d-flex list-unstyled gap-4 m-0">
             <li><RouterLink :to="{name: 'chi-siamo'}" class="text-decoration-none navLinks">Chi-siamo</RouterLink></li>
             <li><RouterLink :to="{name: 'contatti'}" class="text-decoration-none navLinks">Contatti</RouterLink></li>
           </ul>
@@ -45,5 +45,8 @@
 
   .wrapper{
     background-color: #0d0d0d;
+    height: 100vh;
   }
+
+
 </style>
