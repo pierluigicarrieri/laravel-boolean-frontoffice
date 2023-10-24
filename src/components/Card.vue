@@ -27,7 +27,6 @@
 .card{
     background-color: transparent;
     border: 0;
-    margin-bottom: 18px;
 }
 
 .card-body{

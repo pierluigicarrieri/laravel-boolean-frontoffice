@@ -53,7 +53,7 @@
 <template>
     
 
-    <div class="container mt-4">
+    <div class="container">
 
       <div class="titleSection d-flex align-items-center justify-content-between">
         <h1 class="title">I nostri cocktails</h1>
@@ -140,5 +140,9 @@
 
   .titleSection{
     margin-bottom: 35px;
+  }
+
+  .col-4{
+    margin-bottom: 18px;
   }
 </style>
